@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>What is near by: {{ name }}</title>
+		<link rel="stylesheet" href="{{request.static_url('whatsnearby:static/wnb.css')}}"/>
+	</head>
+	<body>
+		<h1>What's nearby: </h1>
+		<form method="POST" action="{{request.current_route_url()}}">
+			Gene File:<br>
+			<input type="file" id = "gene_file" name="gene_file"><br><br>
+			Dnase File:<br>
+			<input type="file" id = "dnase_file" name="dnase_file"><br><br>
+			<input type="submit" name="submit_files" value="Submit">
+		</form>
+		
+		<div id="result">
+			<a href="/result/{{ download }}">Download</a>
+		</div>
+		
+	</body>
+</html>

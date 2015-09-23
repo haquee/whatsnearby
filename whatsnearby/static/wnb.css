@@ -1,0 +1,14 @@
+body {
+	
+}
+
+#result {
+	#background-color:#599CFF;
+	width:90%;
+	height:60%;
+	border: groove;
+	top:30%; 
+	left:5%;
+	position:absolute;
+}
+

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>What is near by: {{ name }}</title>
+		<link rel="stylesheet" href="{{request.static_url('whatsnearby:static/wnb.css')}}"/>
+	</head>
+	<body>
+		<h1>What's nearby: </h1>
+		<form method="POST" action="{{request.route_url('result')}}" accept-charset="utf-8" enctype="multipart/form-data">
+			Gene File:<br>
+			<input type="file" name="gene_file"><br><br>
+			Dnase File:<br>
+			<input type="file" name="dnase_file"><br><br>
+			<input type="submit" name="submit_files" onclick="wait_until()" value="Submit">
+		</form><br>
+		<img id="spinner" src="">
+		
+		<script>
+			function wait_until(){
+				var image = document.getElementById('spinner')
+				image.src = "/static/ajax-loader.gif"
+			}
+		</script>
+	</body>
+</html>
